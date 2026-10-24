@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float acceleration = 50f;
     [SerializeField] private float deceleration = 30f;
+    public bool MovementLocked { get; set; }
 
     private Rigidbody2D rb;
     private InputAction moveAction;
@@ -36,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (MovementLocked){
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         Vector2 targetVelocity = moveInput * moveSpeed;
         float rate = moveInput.sqrMagnitude > 0.01f ? acceleration : deceleration;
         rb.linearVelocity = Vector2.MoveTowards(rb.linearVelocity, targetVelocity, rate * Time.fixedDeltaTime);
