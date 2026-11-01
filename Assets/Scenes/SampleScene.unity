@@ -268,11 +268,9 @@ GameObject:
   - component: {fileID: 554576787}
   - component: {fileID: 554576790}
   - component: {fileID: 554576789}
-  - component: {fileID: 554576792}
   - component: {fileID: 554576791}
   - component: {fileID: 554576793}
-  - component: {fileID: 554576795}
-  - component: {fileID: 554576794}
+  - component: {fileID: 554576792}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -401,9 +399,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 554576786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6d1aed91021d94cb6fc14f95a23307, type: 3}
+  m_Script: {fileID: 11500000, guid: 24f28d4553ac5ed4193a36a989a7e96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 11400000, guid: 5a8592198ce0a7743816755b0fdb396d, type: 2}
+  - {fileID: 11400000, guid: 5d3e7833558411a4b9072efaecb76b4e, type: 2}
+  - {fileID: 11400000, guid: f971fa39678d1ec40a38c19567c15547, type: 2}
+  firePoint: {fileID: 0}
 --- !u!114 &554576792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,10 +416,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 554576786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926197f40503338438b665ea7d6dd563, type: 3}
+  m_Script: {fileID: 11500000, guid: ae6d1aed91021d94cb6fc14f95a23307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDuration: 0.25
 --- !u!114 &554576793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,40 +428,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 554576786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1c225e7f47c8e47a1453b5bd2cfb8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 18
-  dashDuration: 0.15
-  invulnerableTime: 0.35
-  cooldown: 0.8
-  detectRange: 2.5
---- !u!114 &554576794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554576786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2330b88c0dca4fd4aa9bde86bb31ab9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  attackColor: {r: 1, g: 0.55, b: 0, a: 1}
-  defenseColor: {r: 0.25, g: 0.5, b: 1, a: 1}
-  parryColor: {r: 0, g: 1, b: 0, a: 1}
---- !u!114 &554576795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554576786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd0244a286e05147b1bbdf65126575d, type: 3}
+  m_Script: {fileID: 11500000, guid: 926197f40503338438b665ea7d6dd563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &619394800

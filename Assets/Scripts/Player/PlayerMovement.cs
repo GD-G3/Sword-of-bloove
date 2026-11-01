@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 50f;
     [SerializeField] private float deceleration = 30f;
     public bool MovementLocked { get; set; }
+    public Vector2 FacingDirection { get; private set; } = Vector2.down;
 
     private Rigidbody2D rb;
     private InputAction moveAction;
@@ -37,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         moveInput = moveAction != null ? moveAction.ReadValue<Vector2>() : Vector2.zero;
         if (moveInput.sqrMagnitude > 1f)
             moveInput.Normalize();
+        if (moveInput.sqrMagnitude > 0.01f)
+            FacingDirection = moveInput.normalized;
     }
 
     /// <summary>
