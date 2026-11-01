@@ -18,7 +18,7 @@ public class PlayerDefense : MonoBehaviour
         if (Keyboard.current == null)
             return;
 
-        // Mantener Shift para defenderse
+        // Mantener Z para defenderse
         bool defensePressed = Keyboard.current.zKey.isPressed;
 
         IsDefending = defensePressed;
