@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private InputAction moveAction;
     private Vector2 moveInput;
+    private Vector2 dashVelocity;
+    private float dashTimer;
+
+    public bool IsDashing => dashTimer > 0f;
 
     private void Awake()
     {
@@ -35,8 +39,23 @@ public class PlayerMovement : MonoBehaviour
             moveInput.Normalize();
     }
 
+    /// <summary>
+    /// Movimiento rápido forzado (ignora MovementLocked mientras dure)
+    /// </summary>
+    public void Dash(Vector2 velocity, float duration)
+    {
+        dashVelocity = velocity;
+        dashTimer = duration;
+    }
+
     private void FixedUpdate()
     {
+        if (IsDashing)
+        {
+            dashTimer -= Time.fixedDeltaTime;
+            rb.linearVelocity = dashVelocity;
+            return;
+        }
         if (MovementLocked){
             rb.linearVelocity = Vector2.zero;
             return;
